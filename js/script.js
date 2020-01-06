@@ -14,8 +14,7 @@ let states = [];
 
 const searchStates = searchText => {
     let matches  = states.filter (state => {
-        //const regex = new RegExp ('^$[searchText]', 'gi');
-        const regex = searchText;
+        const regex = new RegExp (`^${searchText}`, 'gi');
         return state.name.match(regex) || state.abbr.match(regex);
     });
     console.log(matches);
